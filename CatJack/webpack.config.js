@@ -6,7 +6,7 @@ const copyPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: 'development',
     entry: {
-      weather: './src/js/weather.js',
+      catjack: './src/js/catjack.js',
     },
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -51,11 +51,11 @@ module.exports = {
     plugins: [
       new htmlWebpackPlugin({
         template: path.resolve(__dirname, "./src/index.html"),
-        chunks: ["weather"],
+        chunks: ["catjack"],
         inject: "body",
         filename: "index.html",
       }),
-      /* new copyPlugin({
+      new copyPlugin({
         patterns: [
           {
             from: path.resolve(__dirname, "src/images"),
@@ -63,7 +63,6 @@ module.exports = {
           },
         ],
       }),
-      */
     ],
 }
   
