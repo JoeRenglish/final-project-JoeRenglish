@@ -11,11 +11,19 @@ export default class BJHand {
     }
 
     get handSize() { return this.cards.length; }
+   
 
+    addCard(d) {
+        this.cards.push(d.deal());
+    }
+
+    getCard(i) {
+        return this.cards[i];
+    }
 
     hasAce() {
         for (let i = 0; i < this.cards.length; i++) {
-            if (this.cards[i].isAce) return true;
+            if (this.cards[i].isAce()) return true;
         }
         return false;
     }
@@ -23,17 +31,13 @@ export default class BJHand {
     score() {
         let score = 0;
         for (let i = 0; i < this.cards.length; i++) {
-            if (c.IsFaceCard)
-            {
+            if (this.cards[i].isFaceCard()) {
                 score += 10;
-            }
-            else
-            {
-                score += c.Value;
+            } else {
+                score += this.cards[i].value;
             }
         }
-        if (this.hasAce() && score <= 11)
-        {
+        if (this.hasAce() && score <= 11) {
             score += 10;
         }
 

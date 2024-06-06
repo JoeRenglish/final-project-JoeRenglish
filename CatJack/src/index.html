@@ -23,7 +23,7 @@
        
         <div class="row" style="height: 250px;">
             <div class="col-sm-2 border pt-5 text-center">
-              <button type="button" class="btn btn-primary btn-lg btn-block mb-2">Start Game</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block mb-2" id="startGame">Start Game</button>
               
               <button type="button" class="btn btn-primary btn-lg btn-block">Download Dealer</button>
             </div>
@@ -39,41 +39,41 @@
         <div class="row">
             <div class="col-sm-2 border">
               <h3 class="text-center">Deck</h3>
-              <img src="images/face_down.png" class="img-fluid mx-auto d-block" style="max-width: 150px">
+              <img src="images/0.png" class="img-fluid mx-auto d-block" style="max-width: 150px">
             </div>
               
 
             <div class="col-sm-8 border text-center">
               <h3 class="text-center">Dealer's Hand</h3>
-              <img src="images/face_down.png" class="mx-auto float-left" style="max-width: 150px">
-              <img src="images/2_of_clubs.png" class="mx-auto float-right" style="max-width: 150px">
-              <img src="images/jack_of_diamonds.png" class="mx-auto float-right" style="max-width: 150px">
+              <div id="computerHand"></div>
 
             </div>
 
-            <div class="col-sm-2 pt-5 border pt-5 text-center">
-              <button type="button" class="btn btn-primary btn-lg btn-block mb-2">Hit</button>
-              
-              <button type="button" class="btn btn-primary btn-lg btn-block mb-2">Stay</button>
+            <div class="col-sm-2 pt-5 border pt-5 text-center" id="computerScore">
+             
             </div>
 
        </div>
 
        <div class="row">
-        <div class="col-sm-2 border">
+        
+        <div class="col-sm-2 border text-center">
+          <button type="button" class="btn btn-primary btn-lg" id="hit">Hit</button>
+              
+        <button type="button" class="btn btn-primary btn-lg" id="stay">Stay</button>
           
         </div>
           
 
         <div class="col-sm-8 border text-center">
           <h3 class="text-center">Your Hand</h3>
-          
-          <img src="images/7_of_diamonds.png" class="mx-auto float-right" style="max-width: 150px">
-          <img src="images/ace_of_hearts.png" class="mx-auto float-right" style="max-width: 150px">
+          <div id="playerHand">
+            
+          </div>
 
         </div>
 
-        <div class="col-sm-2 pt-5 border">
+        <div class="col-sm-2 pt-5 border" id="playerScore">
         </div>
 
    </div>

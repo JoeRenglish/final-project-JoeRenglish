@@ -40,7 +40,7 @@ export default class Card {
 
     //Get if the card is an Ace
     isAce() {
-        if (value == 1) {
+        if (this.value == 1) {
             return true;
         } else {
             return false;
@@ -49,7 +49,7 @@ export default class Card {
 
     //Get if the card is a face card
     isFaceCard() {
-        if (value >= 11 && value <= 13) {
+        if (this.value >= 11 && this.value <= 13) {
             return true;
         } else {
             return false;

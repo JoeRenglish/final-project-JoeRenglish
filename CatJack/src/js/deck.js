@@ -26,12 +26,11 @@ export default class Deck {
     }
 
     suffleDeck() {
-        for (let i = 0; i < this.deckSize; i++) {
-            let j = this.random(0, this.deckSize-1);
-            let temp = this.cards[i];
-            this.cards[i] = this.cards[j];
-            this.cards[j] = this.cards[temp];
+        for (let i = 0; i < this.deckSize-1; i++) {
+            const j = Math.floor(Math.random() * i);
+            [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]]
         }
+        return this.cards;
     }
 
     deal() {
