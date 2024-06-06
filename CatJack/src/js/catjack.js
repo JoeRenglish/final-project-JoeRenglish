@@ -22,6 +22,10 @@ const computerHand = new BJHand(d, 2);
 class Game {
 
     constructor() {
+        this.cat = {
+            url: "",
+            description: "",
+        }
         this.$hand = document.getElementById("playerHand");
         this.$hitButton = document.getElementById("hit");
 
@@ -46,8 +50,7 @@ class Game {
             html = `<img src="images/${c.img}" class="mx-auto float-right" style="max-width: 150px">`;
             document.getElementById("computerHand").innerHTML += html;
         }
-        let score = computerHand.score();
-        document.getElementById("computerScore").innerHTML = `<h2>Current Hand Score: ${score}</h2>`;  
+        
     }
 
 
@@ -61,7 +64,7 @@ class Game {
             console.log(html);
         }
         let score = playerHand.score();
-        document.getElementById("playerScore").innerHTML = `<h2>Current Hand Score: ${score}</h2>`;  
+        document.getElementById("playerScore").innerHTML = `<h2>${score}</h2>`;  
     }
 
     hit() {
@@ -74,6 +77,31 @@ class Game {
         location.reload();
     }
 
+    initializeDealer() {
+        fetch('https://api.thecatapi.com/v1/images/search?limit=1&has_breeds=1&api_key=live_s3qkixv10ihe9LrPdR86AK1NZIVrIisl4oN0kB5kPecGIyXxCu2gztI9OxoCVR4K')
+        .then (response => response.json())
+        .then (data => {
+            const url = data[0].url;
+            
+            const description = data[0].breeds[0].description;
+
+            const html = `<img src="${url}" class="img-fluid mx-auto d-block" style="max-height: 25%"></img>`;
+            document.getElementById("dealer").innerHTML = html;
+
+            const html2 = `<p>"${description}"</p>`;
+            document.getElementById("dealerFacts").innerHTML = html2;
+            console.log(url);
+            console.log(description);
+            
+        })
+        .catch(error => {
+            console.log("There was a problem getting info.")
+        })
+    ;
+        
+        
+    }
+
 }
 
 
@@ -81,6 +109,7 @@ window.onload = () => {
     let g = new Game(); 
     g.showPlayerHand();
     g.showDealerHand();
+    g.initializeDealer();
 };
 
 

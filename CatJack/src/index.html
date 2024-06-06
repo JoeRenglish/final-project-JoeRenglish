@@ -22,34 +22,36 @@
         </div>
        
         <div class="row" style="height: 250px;">
-            <div class="col-sm-2 border pt-5 text-center">
+            <div class="col-sm-3 pt-5 text-center">
               <button type="button" class="btn btn-primary btn-lg btn-block mb-2" id="startGame">Start Game</button>
-              
+              <br>
               <button type="button" class="btn btn-primary btn-lg btn-block">Download Dealer</button>
             </div>
-            <div class="col-sm-8 border">
+            <div class="col-sm-6" id="dealer">
                 
-                <img src="https://cdn2.thecatapi.com/images/H_UWbOfra.jpg" class="img-fluid mx-auto d-block" style="max-height: 25%"> 
+                
             </div>
-            <div class="col-sm-2 border">
+            <div class="col-sm-3 p-4">
+              <h3>Dealer Facts</h3>
+              <div id="dealerFacts"></div>
 
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-2 border">
+            <div class="col-sm-3">
               <h3 class="text-center">Deck</h3>
               <img src="images/0.png" class="img-fluid mx-auto d-block" style="max-width: 150px">
             </div>
               
 
-            <div class="col-sm-8 border text-center">
+            <div class="col-sm-6 text-center">
               <h3 class="text-center">Dealer's Hand</h3>
               <div id="computerHand"></div>
 
             </div>
 
-            <div class="col-sm-2 pt-5 border pt-5 text-center" id="computerScore">
+            <div class="col-sm-3 pt-5  pt-5 text-center" id="computerScore">
              
             </div>
 
@@ -57,7 +59,7 @@
 
        <div class="row">
         
-        <div class="col-sm-2 border text-center">
+        <div class="col-sm-3 pt-1 text-center">
           <button type="button" class="btn btn-primary btn-lg" id="hit">Hit</button>
               
         <button type="button" class="btn btn-primary btn-lg" id="stay">Stay</button>
@@ -65,7 +67,7 @@
         </div>
           
 
-        <div class="col-sm-8 border text-center">
+        <div class="col-sm-6 text-center">
           <h3 class="text-center">Your Hand</h3>
           <div id="playerHand">
             
@@ -73,7 +75,9 @@
 
         </div>
 
-        <div class="col-sm-2 pt-5 border" id="playerScore">
+        <div class="col-sm-3 pt-5 text-center">
+          <h2>Current Hand Score</h2>
+          <div id="playerScore"></div>
         </div>
 
    </div>
