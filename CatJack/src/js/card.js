@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
 
     //Initialize private local variables
     #value
@@ -13,7 +13,7 @@ class Card {
     }
 
     //Getters and setters for value
-    get salue() { return this.#value; }
+    get value() { return this.#value; }
     //Validate input for setter
     set value(value) {
         if (value >= 1 && value <= 13) {
@@ -39,7 +39,7 @@ class Card {
     set img(src) { return src;}
 
     //Get if the card is an Ace
-    get isAce() {
+    isAce() {
         if (value == 1) {
             return true;
         } else {
@@ -48,7 +48,7 @@ class Card {
     }
 
     //Get if the card is a face card
-    get isFaceCard() {
+    isFaceCard() {
         if (value >= 11 && value <= 13) {
             return true;
         } else {

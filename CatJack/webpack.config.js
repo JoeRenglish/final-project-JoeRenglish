@@ -6,7 +6,9 @@ const copyPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: 'development',
     entry: {
-      catjack: './src/js/catjack.js',
+     
+      catjack: ['./src/js/card.js','./src/js/deck.js','./src/js/bjhand.js','./src/js/catjack.js'],
+      
     },
     output: {
       path: path.resolve(__dirname, "dist"),

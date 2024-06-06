@@ -1,12 +1,18 @@
-class Deck {
+import Card from './card.js';
+
+export default class Deck {
     
+
     constructor() {
+       
         this.cards = [];
         let i = 0;
         for (let value = 1; value <= 13; value++) {
             for (let suit = 1; suit <= 4; suit++) {
+               
                 i++;
                 this.cards.push(new Card(value, suit, `${i}.png`))
+
             }
         }
     }
@@ -21,7 +27,7 @@ class Deck {
 
     suffleDeck() {
         for (let i = 0; i < this.deckSize; i++) {
-            let j = this.random(0, this.deckSize);
+            let j = this.random(0, this.deckSize-1);
             let temp = this.cards[i];
             this.cards[i] = this.cards[j];
             this.cards[j] = this.cards[temp];
