@@ -102,6 +102,8 @@ class Game {
             html = `<img src="images/${c.img}" class="mx-auto float-right" style="max-width: 150px">`;
             document.getElementById("computerHand").innerHTML += html;
         }
+        this.$hitButton.disabled = true;
+        this.$stayButton.disabled = true;
         
         let playerBust = playerHand.isBusted();
         let computerBust = computerHand.isBusted();

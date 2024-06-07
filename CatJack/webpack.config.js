@@ -3,8 +3,10 @@ const path = require('path');
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const copyPlugin = require("copy-webpack-plugin");
 
+
+
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
      
       catjack: ['./src/js/card.js','./src/js/deck.js','./src/js/bjhand.js','./src/js/catjack.js'],
